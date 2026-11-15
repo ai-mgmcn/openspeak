@@ -1,0 +1,14 @@
+.git
+.github
+.venv
+.env
+*.env
+tests
+scripts
+dist
+**/__pycache__
+.pytest_cache
+.ruff_cache
+.coverage
+uv.lock
+docs

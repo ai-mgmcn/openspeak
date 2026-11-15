@@ -1,0 +1,14 @@
+# docker compose up -d   then open http://localhost:8765
+services:
+  openspeak:
+    build: .
+    image: openspeak
+    ports:
+      - "127.0.0.1:8765:8765"   # this computer only; drop "127.0.0.1:" to share on your network
+    volumes:
+      - openspeak-data:/data     # settings, sessions, downloaded speech models
+    extra_hosts:
+      - "host.docker.internal:host-gateway"   # reach LM Studio / Ollama on the host (needed on Linux)
+    restart: unless-stopped
+volumes:
+  openspeak-data:

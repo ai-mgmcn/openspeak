@@ -1,0 +1,28 @@
+# Python
+__pycache__/
+*.pyc
+.venv/
+dist/
+build/
+*.egg-info/
+
+# Tests and tools
+.pytest_cache/
+.ruff_cache/
+.coverage
+.coverage.*
+htmlcov/
+
+# Your own settings, keys and sessions: they live in ~/.openspeak, never in the repo
+.env
+.env.*
+config.json
+sessions/
+*.jsonl
+
+# Editors and systems
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/
+*.swp

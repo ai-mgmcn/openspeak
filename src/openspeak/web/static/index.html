@@ -1,0 +1,136 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="color-scheme" content="light dark">
+<title>OpenSpeak</title>
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Ccircle cx='16' cy='16' r='14' fill='%235b4bdb'/%3E%3Cpath d='M11 13a5 5 0 0 1 10 0v2a5 5 0 0 1-10 0z' fill='white'/%3E%3C/svg%3E">
+<link rel="stylesheet" href="/static/app.css">
+<script>
+// The sidebar is open from the first paint, as it was left, so the page doesn't slide over on load.
+if (matchMedia("(min-width:901px)").matches && localStorage.getItem("openspeak.sidebar") !== "0") document.documentElement.classList.add("side-open");
+</script>
+</head>
+<body class="booting">
+<!-- History: a sidebar to hop between sessions -->
+<aside class="side" id="side">
+  <button class="ghost new" id="newBtn"><svg viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></svg><span data-i18n="newChat"></span></button>
+  <nav class="side-list" id="historyList" data-i18n-label="history"></nav>
+</aside>
+<header class="top">
+  <button class="icon" id="sideBtn" data-i18n-label="history" aria-controls="side"><svg viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="16" rx="3"/><path d="M9 4v16"/></svg></button>
+  <button class="brand" id="brandBtn" data-i18n-label="history" aria-controls="side"><span class="logo"></span><span class="name">OpenSpeak</span></button>
+  <button class="icon" id="newTop" data-i18n-label="newChat"><svg viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></svg></button>
+  <button class="pill" id="langPill" data-open="settings" data-tab="lang"></button>
+  <div class="spacer"></div>
+  <button class="icon" id="langBtn" data-i18n-label="uiLang" aria-haspopup="menu" aria-expanded="false"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c2.6 2.6 3.9 5.6 3.9 9s-1.3 6.4-3.9 9c-2.6-2.6-3.9-5.6-3.9-9S9.4 5.6 12 3z"/></svg></button>
+  <button class="icon" id="settingsBtn" data-open="settings" data-i18n-label="settings"><svg viewBox="0 0 24 24"><path d="M4 6h10M18 6h2M4 12h4M12 12h8M4 18h12M20 18h0"/><circle cx="16" cy="6" r="2"/><circle cx="10" cy="12" r="2"/><circle cx="18" cy="18" r="2"/></svg></button>
+</header>
+
+<!-- Home: pick a scene -->
+<main id="home" class="view">
+  <section class="hero">
+    <h1 data-i18n="heroTitle"></h1>
+    <p data-i18n="heroSub"></p>
+  </section>
+  <div class="lastbar row hidden" id="pausedBar" role="status"></div>
+  <div class="lastbar row hidden" id="lastBar" role="status"></div>
+  <nav class="tabs" id="catTabs"></nav>
+  <div class="grid" id="scenes"></div>
+  <div class="hidden" id="scenesBox">
+    <nav class="tabs sub" id="subTabs"></nav>
+    <div class="pager" id="pager"></div>
+  </div>
+  <div class="custom hidden" id="customBox">
+    <textarea id="customPrompt" rows="3"></textarea>
+    <button class="primary" id="customStart" data-i18n="start"></button>
+  </div>
+</main>
+
+<!-- Talk -->
+<main id="talk" class="view hidden">
+  <div class="scene-bar"><span id="sceneTitle"></span><span class="grow"></span><span class="small" id="gradeInfo"></span>
+    <button class="finish" id="endBtn"><svg viewBox="0 0 24 24"><path d="M7 3h7l5 5v13H7z"/><path d="M14 3v5h5M10 13h6M10 17h4"/></svg><span data-i18n="end"></span></button></div>
+  <div class="chat" id="chat"></div>
+  <div class="dock">
+    <div class="status"><span id="status"></span><button class="link hidden" id="statusAct"></button></div>
+    <div class="controls">
+      <button class="round" id="helpBtn" data-i18n-label="helpHint"><svg viewBox="0 0 24 24"><path d="M9 18h6M10 21h4M12 3a6 6 0 0 0-3.5 10.9c.6.5 1 1.2 1 2.1h5c0-.9.4-1.6 1-2.1A6 6 0 0 0 12 3z"/></svg></button>
+      <button class="mic" id="micBtn" data-i18n-label="mic" aria-pressed="false"><span class="ring" id="ring"></span><svg viewBox="0 0 24 24"><rect x="9" y="3" width="6" height="11" rx="3"/><path d="M5 11a7 7 0 0 0 14 0M12 18v3"/></svg></button>
+      <button class="round" id="kbBtn" data-i18n-label="keyboard"><svg viewBox="0 0 24 24"><rect x="2" y="6" width="20" height="12" rx="2"/><path d="M6 10h0M10 10h0M14 10h0M18 10h0M7 14h10"/></svg></button>
+    </div>
+    <form class="typebox hidden" id="typeBox"><input id="typeInput" autocomplete="off" data-i18n-label="keyboard" data-i18n-ph="typePh"><button class="primary" data-i18n="send"></button></form>
+  </div>
+</main>
+
+<!-- Report -->
+<main id="reportView" class="view hidden">
+  <div class="report-bar">
+    <button class="ghost" id="backHome"></button>
+    <span class="grow"></span>
+    <a class="ghost" id="mdLink" download data-i18n="markdown"></a>
+    <button class="ghost" id="printBtn" data-i18n="savePdf"></button>
+  </div>
+  <iframe id="reportFrame" title="report"></iframe>
+</main>
+
+<div class="menu hidden" id="langMenu" role="menu"></div>
+<div class="jobs" id="jobs" aria-live="polite"></div>
+<div class="overlay hidden" id="busy"><div class="spinner"></div><p id="busyText"></p></div>
+
+<!-- Drawers -->
+<div class="scrim hidden" id="scrim"></div>
+<aside class="drawer" id="settings" role="dialog" aria-modal="true" aria-labelledby="settingsTitle" inert>
+  <div class="drawer-head"><h2 id="settingsTitle" data-i18n="settings"></h2><button class="icon" data-close data-i18n-label="close"><svg viewBox="0 0 24 24"><path d="M6 6l12 12M18 6L6 18"/></svg></button></div>
+  <div class="welcome hidden" id="welcome" data-i18n="welcome"></div>
+  <nav class="seg" id="setTabs">
+    <button data-tab="lang" data-i18n="tabLang"></button><button data-tab="ai" data-i18n="tabAi"></button><button data-tab="voice" data-i18n="tabVoice"></button>
+  </nav>
+  <div class="drawer-body">
+    <section data-pane="lang">
+      <label><span data-i18n="target"></span><select id="target"></select></label>
+      <input id="targetOther" class="hidden" data-i18n-ph="otherPh">
+      <label><span data-i18n="native"></span><select id="native"></select></label>
+      <label><span data-i18n="reportLang"></span><select id="reportLang"></select></label>
+      <div class="field"><span data-i18n="replyMode"></span><div class="choices" id="replyMode"></div></div>
+      <div class="field"><span data-i18n="level"></span><div class="choices" id="level"></div></div>
+      <p class="note" id="langNote"></p>
+    </section>
+    <section data-pane="ai" class="hidden">
+      <div class="detect" id="detect"></div>
+      <div class="field"><span data-i18n="provider"></span><div class="choices wrap" id="provider"></div></div>
+      <div class="field hidden" id="endpointRow"><span data-i18n="endpoints"></span>
+        <div class="row"><select id="endpoint"></select><span id="endpointKey"></span></div>
+        <p class="note" data-i18n="keysNote"></p>
+      </div>
+      <label id="baseRow"><span data-i18n="baseUrl"></span><input id="baseUrl" placeholder="https://…/v1"></label>
+      <label id="keyRow"><span data-i18n="apiKey"></span><input id="apiKey" type="password" autocomplete="off"></label>
+      <label><span data-i18n="chatModel"></span><div class="row"><input id="chatModel" list="modelList"><button class="ghost" id="refreshModels" data-i18n="refresh"></button></div></label>
+      <label><span data-i18n="graderModel"></span><input id="graderModel" list="modelList" data-i18n-ph="sameAsChat"></label>
+      <datalist id="modelList"></datalist>
+      <p class="note" data-i18n="graderNote"></p>
+      <div class="field"><span data-i18n="gradeWhen"></span><div class="choices" id="gradeWhen"></div></div>
+      <div class="row"><button class="ghost" id="testBtn" data-i18n="test"></button><span class="small" id="testOut"></span></div>
+    </section>
+    <section data-pane="voice" class="hidden">
+      <div class="field"><span data-i18n="stt"></span><div class="choices" id="sttEngine"></div></div>
+      <label id="sttLocalRow"><span data-i18n="sttModel"></span><select id="sttLocal"><option>tiny</option><option>base</option><option>small</option><option>medium</option><option>large-v3</option></select></label>
+      <p class="note warn hidden" id="sttMissing"></p>
+      <label id="sttApiRow"><span data-i18n="sttApiModel"></span><input id="sttModel"></label>
+      <label><span data-i18n="pause"> </span><div class="row"><input type="range" id="silence" min="800" max="3500" step="100"><span class="small" id="silenceOut"></span></div></label>
+      <div class="field"><span data-i18n="tts"></span><div class="choices" id="ttsEngine"></div></div>
+      <label id="voiceRow"><span data-i18n="voice"></span><select id="browserVoice"></select></label>
+      <label id="ttsApiRow"><span data-i18n="ttsApi"></span><div class="row"><input id="ttsModel" placeholder="model"><input id="ttsVoice" placeholder="voice"></div></label>
+      <label><span data-i18n="rate"></span><div class="row"><input type="range" id="rate" min="0.6" max="1.3" step="0.05"><span class="small" id="rateOut"></span></div></label>
+      <button class="ghost" id="voiceTest" data-i18n="hear"></button>
+    </section>
+  </div>
+  <div class="drawer-foot"><span class="small" id="saved"></span><span class="grow"></span><button class="primary" id="nextBtn" data-i18n="done"></button></div>
+</aside>
+
+
+<div class="toast hidden" id="toast"></div>
+<script src="/static/app.js"></script>
+</body>
+</html>

@@ -1,0 +1,7 @@
+version: 2
+updates:
+  # The workflow pins actions to commits; this proposes newer ones.
+  - package-ecosystem: github-actions
+    directory: /
+    schedule:
+      interval: monthly

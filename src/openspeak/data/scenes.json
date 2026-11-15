@@ -1,0 +1,1142 @@
+[
+ {
+  "id": 1,
+  "cat": "travel",
+  "icon": "✈️",
+  "title": {
+   "zh": "值机 · 行李超重",
+   "en": "Check-in: overweight bag",
+   "ja": "チェックイン・荷物超過"
+  },
+  "prompt": "Let's role-play. You're an airline check-in agent, and my suitcase is three kilos overweight. Start by asking for my passport.",
+  "hard": "Play it strict — don't waive the fee easily.",
+  "phrases_en": [
+   "Is there any way to...",
+   "What are my options?",
+   "How much would that come to?",
+   "I'd rather pay than...",
+   "Could you make an exception?"
+  ]
+ },
+ {
+  "id": 2,
+  "cat": "travel",
+  "icon": "🛃",
+  "title": {
+   "zh": "过安检",
+   "en": "Airport security",
+   "ja": "保安検査"
+  },
+  "prompt": "Let's role-play. You're an airport security officer, and something in my bag set off the scanner. Start by asking me to step aside.",
+  "hard": null,
+  "phrases_en": [
+   "It's just a...",
+   "That's for my...",
+   "Do I need to take it out?",
+   "Sorry, I didn't realise.",
+   "Am I good to go?"
+  ]
+ },
+ {
+  "id": 3,
+  "cat": "travel",
+  "icon": "🥤",
+  "title": {
+   "zh": "机上服务",
+   "en": "In-flight service",
+   "ja": "機内サービス"
+  },
+  "prompt": "Let's role-play. You're a flight attendant on a long-haul flight. Start by asking me what I'd like to drink.",
+  "hard": null,
+  "phrases_en": [
+   "Could I get...",
+   "Do you have anything without...",
+   "Would it be possible to...",
+   "Actually, could I change that to...",
+   "When you get a chance, could you..."
+  ]
+ },
+ {
+  "id": 4,
+  "cat": "travel",
+  "icon": "🛂",
+  "title": {
+   "zh": "入境问话",
+   "en": "Immigration questions",
+   "ja": "入国審査"
+  },
+  "prompt": "Let's role-play. You're a border officer at immigration, and I've just landed. Start by asking the purpose of my visit.",
+  "hard": "Ask me follow-up questions and sound suspicious.",
+  "phrases_en": [
+   "I'm here for...",
+   "Two weeks.",
+   "I'm staying at...",
+   "It's a business trip.",
+   "I'm travelling on my own."
+  ]
+ },
+ {
+  "id": 5,
+  "cat": "travel",
+  "icon": "🧳",
+  "title": {
+   "zh": "行李丢了",
+   "en": "Lost luggage",
+   "ja": "荷物の紛失"
+  },
+  "prompt": "Let's role-play. You're a baggage claim agent, and my suitcase never came out. Start by asking for my baggage tag.",
+  "hard": null,
+  "phrases_en": [
+   "It's a medium-sized black one with...",
+   "When can I expect...",
+   "What happens if it doesn't turn up?",
+   "Can you deliver it to my hotel?",
+   "Who do I follow up with?"
+  ]
+ },
+ {
+  "id": 6,
+  "cat": "travel",
+  "icon": "🚕",
+  "title": {
+   "zh": "打车 / 网约车",
+   "en": "Taxi / ride-hailing",
+   "ja": "タクシー・配車"
+  },
+  "prompt": "Let's role-play. You're a taxi driver picking me up at the airport. Start by asking where I'm headed.",
+  "hard": null,
+  "phrases_en": [
+   "Could you take me to...",
+   "Roughly how long will it take?",
+   "Do you take card?",
+   "Could you drop me at the corner?",
+   "Keep the change."
+  ]
+ },
+ {
+  "id": 7,
+  "cat": "travel",
+  "icon": "🚇",
+  "title": {
+   "zh": "买地铁票 / 问路线",
+   "en": "Metro tickets & routes",
+   "ja": "地下鉄の切符と路線"
+  },
+  "prompt": "Let's role-play. You're a subway station attendant, and I don't know which ticket to buy. Start by asking how many days I'll be here.",
+  "hard": null,
+  "phrases_en": [
+   "Which line do I take for...",
+   "Do I need to change trains?",
+   "Is this ticket good for buses too?",
+   "Which exit should I use?",
+   "Am I on the right platform?"
+  ]
+ },
+ {
+  "id": 8,
+  "cat": "travel",
+  "icon": "🏨",
+  "title": {
+   "zh": "酒店入住",
+   "en": "Hotel check-in",
+   "ja": "ホテルのチェックイン"
+  },
+  "prompt": "Let's role-play. You're a hotel front desk clerk, and I'm checking in. Start by asking for my name and ID.",
+  "hard": null,
+  "phrases_en": [
+   "I have a reservation under...",
+   "Is breakfast included?",
+   "What time is check-out?",
+   "Could I get a room away from the lift?",
+   "Is there anywhere I can leave my bags?"
+  ]
+ },
+ {
+  "id": 9,
+  "cat": "travel",
+  "icon": "🥶",
+  "title": {
+   "zh": "酒店出问题",
+   "en": "Hotel room problem",
+   "ja": "ホテルの部屋のトラブル"
+  },
+  "prompt": "Let's role-play. You're a hotel front desk clerk. I'm calling from my room because the air conditioning doesn't work and it's freezing. Start by apologising.",
+  "hard": "Tell me the hotel is fully booked and there's nothing you can do.",
+  "phrases_en": [
+   "I'm afraid there's a problem with...",
+   "It's been like this since...",
+   "I'd appreciate it if you could...",
+   "Is there any chance of moving to another room?",
+   "I'd rather not wait until tomorrow."
+  ]
+ },
+ {
+  "id": 10,
+  "cat": "travel",
+  "icon": "🍽️",
+  "title": {
+   "zh": "餐厅点单",
+   "en": "Ordering at a restaurant",
+   "ja": "レストランで注文"
+  },
+  "prompt": "Let's role-play. You're a waiter at a busy restaurant, and I've just sat down. Start by asking if I'd like something to drink.",
+  "hard": null,
+  "phrases_en": [
+   "What would you recommend?",
+   "What's in the...?",
+   "Does it come with...?",
+   "I'll have the..., please.",
+   "Could I get that without...?"
+  ]
+ },
+ {
+  "id": 11,
+  "cat": "travel",
+  "icon": "🧾",
+  "title": {
+   "zh": "餐厅出事 · 菜错了 / 结账问题",
+   "en": "Wrong dish / bill problem",
+   "ja": "料理の間違い・会計トラブル"
+  },
+  "prompt": "Let's role-play. You're a waiter. You've brought me the wrong dish, and I'm in a hurry. Start by putting the plate down and asking if everything's alright.",
+  "hard": null,
+  "phrases_en": [
+   "Sorry, I think there's been a mix-up.",
+   "I actually ordered the...",
+   "Could you check the bill for me?",
+   "I don't think this is right.",
+   "Could we split it?"
+  ]
+ },
+ {
+  "id": 12,
+  "cat": "travel",
+  "icon": "🧥",
+  "title": {
+   "zh": "买东西 · 试穿 · 退换",
+   "en": "Shopping, trying on, exchanges",
+   "ja": "買い物・試着・交換"
+  },
+  "prompt": "Let's role-play. You're a shop assistant. I'm looking for a jacket but I'm not sure about the size. Start by asking if I need help.",
+  "hard": null,
+  "phrases_en": [
+   "Do you have this in a...",
+   "Could I try it on?",
+   "Where's the fitting room?",
+   "It's a bit tight around the...",
+   "What's your return policy?"
+  ]
+ },
+ {
+  "id": 13,
+  "cat": "travel",
+  "icon": "💊",
+  "title": {
+   "zh": "药店 / 看病",
+   "en": "Pharmacy / feeling sick",
+   "ja": "薬局・体調不良"
+  },
+  "prompt": "Let's role-play. You're a pharmacist, and I've had a sore throat and a fever for two days. Start by asking what's wrong.",
+  "hard": null,
+  "phrases_en": [
+   "I've had... for two days.",
+   "It hurts when I...",
+   "It comes and goes.",
+   "Is there anything over the counter for it?",
+   "Should I see a doctor?"
+  ]
+ },
+ {
+  "id": 14,
+  "cat": "travel",
+  "icon": "📶",
+  "title": {
+   "zh": "手机卡 / 上不了网",
+   "en": "SIM card / no internet",
+   "ja": "SIMカード・ネット不通"
+  },
+  "prompt": "Let's role-play. You work at a phone shop, and I need a local SIM card for two weeks. Start by asking what kind of phone I have.",
+  "hard": null,
+  "phrases_en": [
+   "How much data do I get?",
+   "Does it work in...",
+   "Do I need to register it?",
+   "It says no service — any idea why?",
+   "Can you set it up for me?"
+  ]
+ },
+ {
+  "id": 15,
+  "cat": "travel",
+  "icon": "🏧",
+  "title": {
+   "zh": "钱的问题 · ATM 吞卡 / 刷卡被拒",
+   "en": "ATM ate my card",
+   "ja": "ATMにカードが吸い込まれた"
+  },
+  "prompt": "Let's role-play. You're a bank teller. The ATM outside just swallowed my card. Start by asking what happened.",
+  "hard": null,
+  "phrases_en": [
+   "The machine kept my card.",
+   "My card was declined and I don't know why.",
+   "Is there a fee for...",
+   "Could you check if...",
+   "What do I need to bring?"
+  ]
+ },
+ {
+  "id": 16,
+  "cat": "travel",
+  "icon": "🚓",
+  "title": {
+   "zh": "报警 / 东西被偷",
+   "en": "Reporting a theft",
+   "ja": "盗難の届け出"
+  },
+  "prompt": "Let's role-play. You're a police officer at a station. My wallet was stolen on the subway an hour ago. Start by asking me to describe what happened.",
+  "hard": null,
+  "phrases_en": [
+   "I was..., and then...",
+   "I noticed it was missing when...",
+   "It happened around six.",
+   "I need a report for my insurance.",
+   "Is there any chance of getting it back?"
+  ]
+ },
+ {
+  "id": 17,
+  "cat": "travel",
+  "icon": "🗺️",
+  "title": {
+   "zh": "问路（并且听懂对方的回答）",
+   "en": "Asking for directions",
+   "ja": "道を尋ねる"
+  },
+  "prompt": "Let's role-play. You're a local on the street, and I'm lost looking for the train station. Start by asking if I need help.",
+  "hard": "Give me long, detailed directions with lots of street names.",
+  "phrases_en": [
+   "Sorry, is this the way to...",
+   "So I go straight and then turn left?",
+   "How far is it on foot?",
+   "Could you point me in the right direction?",
+   "Is it walkable?"
+  ]
+ },
+ {
+  "id": 18,
+  "cat": "travel",
+  "icon": "🎫",
+  "title": {
+   "zh": "订票 / 改行程",
+   "en": "Booking / changing tickets",
+   "ja": "切符の予約・変更"
+  },
+  "prompt": "Let's role-play. You work at a train station ticket counter. I missed my train and need to get on a later one. Start by asking for my ticket.",
+  "hard": null,
+  "phrases_en": [
+   "I missed my connection.",
+   "What's the next one to...",
+   "Can I change it without paying extra?",
+   "Is there anything earlier?",
+   "Does that one require a reservation?"
+  ]
+ },
+ {
+  "id": 19,
+  "cat": "travel",
+  "icon": "🏛️",
+  "title": {
+   "zh": "景点 / 导游团",
+   "en": "Sights & tours",
+   "ja": "観光地・ツアー"
+  },
+  "prompt": "Let's role-play. You're a guide at a museum ticket desk. Start by telling me the ticket options.",
+  "hard": null,
+  "phrases_en": [
+   "What's the difference between...",
+   "How long does the tour take?",
+   "Is it in English?",
+   "Is there a student discount?",
+   "Can I take photos in there?"
+  ]
+ },
+ {
+  "id": 20,
+  "cat": "travel",
+  "icon": "🎒",
+  "title": {
+   "zh": "青旅 / 路上认识人",
+   "en": "Meeting people at a hostel",
+   "ja": "ホステルでの出会い"
+  },
+  "prompt": "Let's role-play. You're another traveller in a hostel common room. Start by asking me where I'm from.",
+  "hard": null,
+  "phrases_en": [
+   "How long have you been travelling?",
+   "What brought you here?",
+   "Any recommendations?",
+   "Same here.",
+   "We should... sometime."
+  ]
+ },
+ {
+  "id": 21,
+  "cat": "daily",
+  "icon": "🚪",
+  "title": {
+   "zh": "邻居搭话",
+   "en": "Chatting with a neighbour",
+   "ja": "隣人と立ち話"
+  },
+  "prompt": "Let's role-play. You're my neighbour, and we've just run into each other in the hallway. Start by saying hi and commenting on the weather.",
+  "hard": null,
+  "phrases_en": [
+   "How's it going?",
+   "Can't complain.",
+   "Have you lived here long?",
+   "Anyway, I should get going.",
+   "See you around."
+  ]
+ },
+ {
+  "id": 22,
+  "cat": "daily",
+  "icon": "☕",
+  "title": {
+   "zh": "同事聊周末",
+   "en": "Weekend chat with a colleague",
+   "ja": "同僚と週末の話"
+  },
+  "prompt": "Let's role-play. You're a colleague, and it's Monday morning by the coffee machine. Start by asking how my weekend was.",
+  "hard": null,
+  "phrases_en": [
+   "Nothing much, just...",
+   "I ended up...",
+   "We were supposed to..., but...",
+   "How about you?",
+   "That sounds fun."
+  ]
+ },
+ {
+  "id": 23,
+  "cat": "daily",
+  "icon": "🍜",
+  "title": {
+   "zh": "约人出去",
+   "en": "Asking someone out",
+   "ja": "誰かを誘う"
+  },
+  "prompt": "Let's role-play. You're a friend, and I want to ask you to try a new restaurant this week. Start by asking what's up.",
+  "hard": null,
+  "phrases_en": [
+   "Are you free on...",
+   "Do you fancy...",
+   "Does Thursday work for you?",
+   "Let's say seven.",
+   "I'll text you the address."
+  ]
+ },
+ {
+  "id": 24,
+  "cat": "daily",
+  "icon": "🙅",
+  "title": {
+   "zh": "婉拒邀约",
+   "en": "Turning down an invitation",
+   "ja": "誘いを断る"
+  },
+  "prompt": "Let's role-play. You're a friend inviting me to a party on Saturday, but I really don't want to go. Start by inviting me.",
+  "hard": null,
+  "phrases_en": [
+   "I'd love to, but...",
+   "I'm afraid I can't make it.",
+   "Can I take a rain check?",
+   "Maybe next time?",
+   "Thanks for thinking of me."
+  ]
+ },
+ {
+  "id": 25,
+  "cat": "daily",
+  "icon": "📞",
+  "title": {
+   "zh": "打电话改预约",
+   "en": "Rescheduling by phone",
+   "ja": "電話で予約変更"
+  },
+  "prompt": "Let's role-play. You work at a dentist's office. I'm calling to move my appointment. Start by answering the phone.",
+  "hard": null,
+  "phrases_en": [
+   "Hi, I'm calling about...",
+   "I need to reschedule.",
+   "Do you have anything later that week?",
+   "Sorry, could you repeat that?",
+   "Let me just write that down."
+  ]
+ },
+ {
+  "id": 26,
+  "cat": "daily",
+  "icon": "🩺",
+  "title": {
+   "zh": "看医生",
+   "en": "Seeing a doctor",
+   "ja": "診察を受ける"
+  },
+  "prompt": "Let's role-play. You're a doctor, and I've been having trouble sleeping for a month. Start by asking what brings me in.",
+  "hard": null,
+  "phrases_en": [
+   "It started about a month ago.",
+   "I've been waking up at...",
+   "I've tried..., but it didn't help.",
+   "Is that something to worry about?",
+   "Are there any side effects?"
+  ]
+ },
+ {
+  "id": 27,
+  "cat": "daily",
+  "icon": "💇",
+  "title": {
+   "zh": "理发",
+   "en": "At the hairdresser",
+   "ja": "美容院で"
+  },
+  "prompt": "Let's role-play. You're a hairdresser, and I'm in the chair. Start by asking what I want done.",
+  "hard": null,
+  "phrases_en": [
+   "Just a trim, please.",
+   "About this much off.",
+   "Keep the length on top.",
+   "A bit shorter on the sides.",
+   "That's perfect, thanks."
+  ]
+ },
+ {
+  "id": 28,
+  "cat": "daily",
+  "icon": "🏋️",
+  "title": {
+   "zh": "健身房",
+   "en": "At the gym",
+   "ja": "ジムで"
+  },
+  "prompt": "Let's role-play. You're a trainer at a gym I've just joined. Start by asking what my goals are.",
+  "hard": null,
+  "phrases_en": [
+   "I'm trying to...",
+   "I usually work out about three times a week.",
+   "Could you show me how to use...",
+   "Am I doing this right?",
+   "My lower back's been bothering me."
+  ]
+ },
+ {
+  "id": 29,
+  "cat": "daily",
+  "icon": "🏠",
+  "title": {
+   "zh": "租房看房",
+   "en": "Viewing a flat",
+   "ja": "部屋の内見"
+  },
+  "prompt": "Let's role-play. You're a letting agent showing me a one-bedroom flat. Start by opening the door and describing the place.",
+  "hard": null,
+  "phrases_en": [
+   "What's included in the rent?",
+   "How long is the lease?",
+   "Is there anywhere to put a washing machine?",
+   "What are the neighbours like?",
+   "Is there any flexibility on the price?"
+  ]
+ },
+ {
+  "id": 30,
+  "cat": "daily",
+  "icon": "😤",
+  "title": {
+   "zh": "打客服电话投诉",
+   "en": "Complaining to customer service",
+   "ja": "カスタマーサービスに苦情"
+  },
+  "prompt": "Let's role-play. You're a customer service rep. I was charged twice for the same order. Start by asking for my order number.",
+  "hard": "Keep telling me it's not your department.",
+  "phrases_en": [
+   "I've been charged twice.",
+   "I've already tried that.",
+   "I'd like to speak to someone who can...",
+   "How long will the refund take?",
+   "Could I get that in writing?"
+  ]
+ },
+ {
+  "id": 31,
+  "cat": "daily",
+  "icon": "↩️",
+  "title": {
+   "zh": "退货",
+   "en": "Returning an item",
+   "ja": "返品する"
+  },
+  "prompt": "Let's role-play. You're a shop assistant. I want to return something I bought last week but I've lost the receipt. Start by asking how you can help.",
+  "hard": null,
+  "phrases_en": [
+   "I'd like to return this.",
+   "I paid by card, if that helps.",
+   "It's still unused.",
+   "Is store credit the only option?",
+   "Who should I talk to?"
+  ]
+ },
+ {
+  "id": 32,
+  "cat": "daily",
+  "icon": "🙏",
+  "title": {
+   "zh": "道歉",
+   "en": "Apologising",
+   "ja": "謝る"
+  },
+  "prompt": "Let's role-play. You're a friend, and I forgot your birthday dinner last night. Start by sounding a bit hurt.",
+  "hard": null,
+  "phrases_en": [
+   "I'm really sorry about...",
+   "I completely lost track of...",
+   "That's on me.",
+   "Let me make it up to you.",
+   "It won't happen again."
+  ]
+ },
+ {
+  "id": 33,
+  "cat": "daily",
+  "icon": "🤝",
+  "title": {
+   "zh": "礼貌地不同意",
+   "en": "Disagreeing politely",
+   "ja": "丁寧に反対する"
+  },
+  "prompt": "Let's role-play. You're a friend who thinks working from home makes people lazy. I disagree. Start by making your case.",
+  "hard": null,
+  "phrases_en": [
+   "I see what you mean, but...",
+   "I'm not so sure about that.",
+   "That's true up to a point.",
+   "Have you considered...",
+   "Fair enough, but..."
+  ]
+ },
+ {
+  "id": 34,
+  "cat": "daily",
+  "icon": "🗣️",
+  "title": {
+   "zh": "讲一件今天的事",
+   "en": "Telling a story about your day",
+   "ja": "今日の出来事を話す"
+  },
+  "prompt": "Let's role-play. You're a friend, and I want to tell you about something annoying that happened at work today. Start by asking how my day was.",
+  "hard": null,
+  "phrases_en": [
+   "So basically...",
+   "And then, out of nowhere...",
+   "The thing is...",
+   "Long story short...",
+   "I was like, seriously?"
+  ]
+ },
+ {
+  "id": 35,
+  "cat": "daily",
+  "icon": "📰",
+  "title": {
+   "zh": "聊看法 · 新闻话题",
+   "en": "Opinions on the news",
+   "ja": "ニュースについて意見"
+  },
+  "prompt": "Let's role-play. You're a friend, and we're talking about whether AI will take our jobs. Start by asking what I think.",
+  "hard": null,
+  "phrases_en": [
+   "Personally, I think...",
+   "It depends on...",
+   "On the one hand..., on the other...",
+   "I could be wrong, but...",
+   "Where do you stand on it?"
+  ]
+ },
+ {
+  "id": 36,
+  "cat": "daily",
+  "icon": "🥂",
+  "title": {
+   "zh": "聚会认识新人",
+   "en": "Meeting new people at a party",
+   "ja": "パーティーで初対面"
+  },
+  "prompt": "Let's role-play. We've just been introduced at a party and don't know each other. Start by asking how I know the host.",
+  "hard": null,
+  "phrases_en": [
+   "So how do you two know each other?",
+   "What do you do?",
+   "Oh, whereabouts?",
+   "No way, me too.",
+   "It was nice meeting you."
+  ]
+ },
+ {
+  "id": 37,
+  "cat": "daily",
+  "icon": "🧭",
+  "title": {
+   "zh": "给别人指路 / 帮忙",
+   "en": "Helping a lost tourist",
+   "ja": "道に迷った観光客を助ける"
+  },
+  "prompt": "Let's role-play. You're a tourist who's lost and asks me for directions to the nearest station. Start by stopping me on the street.",
+  "hard": null,
+  "phrases_en": [
+   "Go straight for about two blocks.",
+   "You'll see a... on your right.",
+   "You can't miss it.",
+   "It's about a ten-minute walk.",
+   "Do you want me to show you on the map?"
+  ]
+ },
+ {
+  "id": 38,
+  "cat": "daily",
+  "icon": "💻",
+  "title": {
+   "zh": "技术支持电话",
+   "en": "Tech support call",
+   "ja": "テクニカルサポートに電話"
+  },
+  "prompt": "Let's role-play. You're tech support. My internet keeps dropping every ten minutes. Start by asking me to describe the problem.",
+  "hard": null,
+  "phrases_en": [
+   "It keeps cutting out.",
+   "It happens every ten minutes or so.",
+   "I've already restarted it.",
+   "Which light should be on?",
+   "Hang on, let me check."
+  ]
+ },
+ {
+  "id": 39,
+  "cat": "business",
+  "icon": "🧍",
+  "title": {
+   "zh": "每日站会",
+   "en": "Daily standup",
+   "ja": "デイリースタンドアップ"
+  },
+  "prompt": "Let's role-play. You're my team lead running our daily standup. Start by asking me for my update.",
+  "hard": null,
+  "phrases_en": [
+   "Yesterday I wrapped up...",
+   "Today I'm picking up...",
+   "I'm blocked on...",
+   "I should have it done by...",
+   "Nothing else from me."
+  ]
+ },
+ {
+  "id": 40,
+  "cat": "business",
+  "icon": "👥",
+  "title": {
+   "zh": "和上级 one-on-one",
+   "en": "One-on-one with your manager",
+   "ja": "上司との1on1"
+  },
+  "prompt": "Let's role-play. You're my manager in our weekly one-on-one. Start by asking how things are going.",
+  "hard": null,
+  "phrases_en": [
+   "Overall, pretty good.",
+   "One thing I wanted to raise is...",
+   "I'd like more visibility on...",
+   "Where do you see me in six months?",
+   "Is there anything you'd like me to do differently?"
+  ]
+ },
+ {
+  "id": 41,
+  "cat": "business",
+  "icon": "💡",
+  "title": {
+   "zh": "提案 · 说服别人",
+   "en": "Pitching an idea",
+   "ja": "提案・説得"
+  },
+  "prompt": "Let's role-play. You're my manager, and I want to convince you to let us rewrite our checkout flow. Start by asking me to pitch it.",
+  "hard": null,
+  "phrases_en": [
+   "The short version is...",
+   "There are three reasons.",
+   "Right now we're losing...",
+   "If we do nothing...",
+   "What would you need to see to say yes?"
+  ]
+ },
+ {
+  "id": 42,
+  "cat": "business",
+  "icon": "📊",
+  "title": {
+   "zh": "被追问数字",
+   "en": "Defending your numbers",
+   "ja": "数字を突っ込まれる"
+  },
+  "prompt": "Let's role-play. You're a director reviewing my numbers, and you don't believe my conversion figures. Start by asking where the data came from.",
+  "hard": "Interrupt me and challenge every number.",
+  "phrases_en": [
+   "It's up about twelve percent quarter on quarter.",
+   "That's based on...",
+   "I don't have that number to hand — let me follow up.",
+   "The sample size is small, so...",
+   "Roughly speaking..."
+  ]
+ },
+ {
+  "id": 43,
+  "cat": "business",
+  "icon": "⚖️",
+  "title": {
+   "zh": "反驳资深同事",
+   "en": "Pushing back on a senior colleague",
+   "ja": "先輩に反論する"
+  },
+  "prompt": "Let's role-play. You're a senior engineer who wants to build this in-house, and I think we should buy it. Start by explaining your position.",
+  "hard": null,
+  "phrases_en": [
+   "I hear you on...",
+   "My concern is...",
+   "Help me understand how...",
+   "What if we...",
+   "Can we agree to revisit it in a month?"
+  ]
+ },
+ {
+  "id": 44,
+  "cat": "business",
+  "icon": "⏳",
+  "title": {
+   "zh": "推迟 deadline",
+   "en": "Moving a deadline",
+   "ja": "締め切りを延ばす"
+  },
+  "prompt": "Let's role-play. You're my project manager, and I need to tell you the launch will slip by two weeks. Start by asking if we're still on track.",
+  "hard": null,
+  "phrases_en": [
+   "I want to flag something early.",
+   "Realistically, we're looking at...",
+   "The reason is...",
+   "Here's what I'd suggest.",
+   "If we cut..., we could still hit the original date."
+  ]
+ },
+ {
+  "id": 45,
+  "cat": "business",
+  "icon": "✂️",
+  "title": {
+   "zh": "砍需求范围",
+   "en": "Cutting scope",
+   "ja": "スコープを削る"
+  },
+  "prompt": "Let's role-play. You're a product manager who keeps adding features to my sprint. Start by asking me to squeeze in one more thing.",
+  "hard": null,
+  "phrases_en": [
+   "Something would have to come out.",
+   "Which of these is the priority?",
+   "Can we park that for now?",
+   "That's a bigger change than it looks.",
+   "I can do a rough version by Friday."
+  ]
+ },
+ {
+  "id": 46,
+  "cat": "business",
+  "icon": "🚫",
+  "title": {
+   "zh": "拒绝一个请求",
+   "en": "Saying no to a request",
+   "ja": "依頼を断る"
+  },
+  "prompt": "Let's role-play. You're a colleague from another team asking me to take on work I don't have time for. Start by asking me for a favour.",
+  "hard": null,
+  "phrases_en": [
+   "I'd like to help, but...",
+   "I'm at capacity this sprint.",
+   "What I can do is...",
+   "Have you tried asking...",
+   "Let's talk again after the release."
+  ]
+ },
+ {
+  "id": 47,
+  "cat": "business",
+  "icon": "🚧",
+  "title": {
+   "zh": "上报阻塞",
+   "en": "Escalating a blocker",
+   "ja": "ブロッカーをエスカレーション"
+  },
+  "prompt": "Let's role-play. You're a manager from another team, and my project has been blocked on your team for two weeks. Start by asking why I've set up this call.",
+  "hard": null,
+  "phrases_en": [
+   "I wanted to raise this before it becomes a problem.",
+   "We've been waiting on... since...",
+   "It's holding up...",
+   "What would help you unblock it?",
+   "Can we agree on a date?"
+  ]
+ },
+ {
+  "id": 48,
+  "cat": "business",
+  "icon": "🔧",
+  "title": {
+   "zh": "跨团队要资源",
+   "en": "Asking another team for help",
+   "ja": "他チームにリソースを頼む"
+  },
+  "prompt": "Let's role-play. You're a data engineer, and I need your team to build me a new pipeline. Start by asking what I need.",
+  "hard": null,
+  "phrases_en": [
+   "I know you're busy, so I'll keep it short.",
+   "Roughly how much effort would that be?",
+   "Where would it sit in your backlog?",
+   "Is there a lighter version we could start with?",
+   "Who else should be in this conversation?"
+  ]
+ },
+ {
+  "id": 49,
+  "cat": "business",
+  "icon": "🔥",
+  "title": {
+   "zh": "事故复盘",
+   "en": "Incident postmortem",
+   "ja": "障害の振り返り"
+  },
+  "prompt": "Let's role-play. You're leading a postmortem for an outage my change caused. Start by asking me to walk through the timeline.",
+  "hard": null,
+  "phrases_en": [
+   "At around two, we saw...",
+   "The root cause was...",
+   "What we missed was...",
+   "To stop it happening again, we're...",
+   "That was my call, and it was wrong."
+  ]
+ },
+ {
+  "id": 50,
+  "cat": "business",
+  "icon": "🚀",
+  "title": {
+   "zh": "客户 kick-off",
+   "en": "Client kick-off",
+   "ja": "クライアントとのキックオフ"
+  },
+  "prompt": "Let's role-play. You're a client we've just signed, and this is our first call. Start by introducing yourself and your company.",
+  "hard": null,
+  "phrases_en": [
+   "Thanks for making the time.",
+   "Let me quickly run through the agenda.",
+   "Just so I understand your priorities...",
+   "What does success look like for you?",
+   "I'll send over a summary and next steps."
+  ]
+ },
+ {
+  "id": 51,
+  "cat": "business",
+  "icon": "🔍",
+  "title": {
+   "zh": "挖需求",
+   "en": "Drawing out requirements",
+   "ja": "要件を掘り下げる"
+  },
+  "prompt": "Let's role-play. You're a business stakeholder who says you need \"a dashboard\", but you're vague about why. Start by telling me what you want.",
+  "hard": null,
+  "phrases_en": [
+   "Help me understand the problem behind that.",
+   "Who's going to use it, and how often?",
+   "What decision would it help you make?",
+   "What are you doing today instead?",
+   "So if I'm hearing you right..."
+  ]
+ },
+ {
+  "id": 52,
+  "cat": "business",
+  "icon": "📈",
+  "title": {
+   "zh": "向高层汇报",
+   "en": "Updating an executive",
+   "ja": "役員への報告"
+  },
+  "prompt": "Let's role-play. You're a VP with five minutes, and I'm updating you on my project. Start by asking for the headline.",
+  "hard": null,
+  "phrases_en": [
+   "Headline: we're on track for...",
+   "One risk worth knowing about.",
+   "I need a decision on...",
+   "The ask is...",
+   "I'll follow up in writing."
+  ]
+ },
+ {
+  "id": 53,
+  "cat": "business",
+  "icon": "🎯",
+  "title": {
+   "zh": "面试 · 你是候选人",
+   "en": "Job interview (candidate)",
+   "ja": "面接・候補者として"
+  },
+  "prompt": "Let's role-play. You're a hiring manager interviewing me for a senior role. Start by asking me to walk you through my background.",
+  "hard": "Ask me a hard behavioural question and push back on my answer.",
+  "phrases_en": [
+   "I've spent the last three years...",
+   "The project I'm proudest of is...",
+   "What drew me to this role is...",
+   "Can you tell me more about the team?",
+   "What would the first ninety days look like?"
+  ]
+ },
+ {
+  "id": 54,
+  "cat": "business",
+  "icon": "🧑‍💼",
+  "title": {
+   "zh": "面试 · 你是面试官",
+   "en": "Job interview (interviewer)",
+   "ja": "面接・面接官として"
+  },
+  "prompt": "Let's role-play. You're a candidate interviewing for a job on my team. Start by asking me what the role involves.",
+  "hard": null,
+  "phrases_en": [
+   "Tell me about a time when...",
+   "What was your role specifically?",
+   "How did you handle the pushback?",
+   "Do you have any questions for me?",
+   "We'll be in touch by the end of the week."
+  ]
+ },
+ {
+  "id": 55,
+  "cat": "business",
+  "icon": "📝",
+  "title": {
+   "zh": "绩效面谈",
+   "en": "Performance review",
+   "ja": "評価面談"
+  },
+  "prompt": "Let's role-play. You're my manager giving me my performance review, and the feedback is mixed. Start with the positives.",
+  "hard": null,
+  "phrases_en": [
+   "Could you give me a specific example?",
+   "That's fair.",
+   "I see it a bit differently — here's why.",
+   "What would \"exceeding\" look like?",
+   "How do we track that between now and next review?"
+  ]
+ },
+ {
+  "id": 56,
+  "cat": "business",
+  "icon": "💰",
+  "title": {
+   "zh": "谈薪 / 谈 offer",
+   "en": "Negotiating an offer",
+   "ja": "給与・オファー交渉"
+  },
+  "prompt": "Let's role-play. You're a recruiter offering me a job, and the salary is lower than I expected. Start by telling me the offer.",
+  "hard": null,
+  "phrases_en": [
+   "Thanks — I'm excited about the role.",
+   "I was expecting something closer to...",
+   "Is there any flexibility on the base?",
+   "What's the full package look like?",
+   "Could I have a couple of days to think it over?"
+  ]
+ },
+ {
+  "id": 57,
+  "cat": "business",
+  "icon": "🗒️",
+  "title": {
+   "zh": "给下属负面反馈",
+   "en": "Giving critical feedback",
+   "ja": "部下に厳しいフィードバック"
+  },
+  "prompt": "Let's role-play. You're someone on my team who's been missing deadlines. Start by asking why I wanted to talk.",
+  "hard": null,
+  "phrases_en": [
+   "I want to talk about something directly.",
+   "I've noticed that...",
+   "What's getting in the way?",
+   "Here's what I need going forward.",
+   "Let's check in again in two weeks."
+  ]
+ },
+ {
+  "id": 58,
+  "cat": "business",
+  "icon": "🪑",
+  "title": {
+   "zh": "会议主持",
+   "en": "Chairing a meeting",
+   "ja": "会議の司会"
+  },
+  "prompt": "Let's role-play. You're a colleague in a meeting I'm chairing, and you keep going off topic. Start by rambling about something unrelated.",
+  "hard": null,
+  "phrases_en": [
+   "Sorry to jump in —",
+   "Let's park that for now.",
+   "Can we come back to that at the end?",
+   "To keep us on time...",
+   "So the action items are..."
+  ]
+ },
+ {
+  "id": 59,
+  "cat": "business",
+  "icon": "🍷",
+  "title": {
+   "zh": "商务饭局闲聊",
+   "en": "Small talk at a business dinner",
+   "ja": "会食での雑談"
+  },
+  "prompt": "Let's role-play. You're a client I'm having dinner with, and we're waiting for the food. Start with some small talk.",
+  "hard": null,
+  "phrases_en": [
+   "Have you been to this part of town before?",
+   "How was the flight over?",
+   "Speaking of which...",
+   "Anyway — about tomorrow's meeting...",
+   "This one's on us."
+  ]
+ },
+ {
+  "id": 60,
+  "cat": "business",
+  "icon": "❓",
+  "title": {
+   "zh": "会上没听懂",
+   "en": "Lost in a meeting",
+   "ja": "会議でついていけない"
+  },
+  "prompt": "Let's role-play. You're a colleague explaining something technical very quickly with lots of acronyms. Start explaining, and don't slow down.",
+  "hard": null,
+  "phrases_en": [
+   "Sorry, could you back up a second?",
+   "What does ... stand for?",
+   "Just to make sure I follow —",
+   "Can you give me an example?",
+   "Let me say it back to you and you tell me if I've got it."
+  ]
+ }
+]
