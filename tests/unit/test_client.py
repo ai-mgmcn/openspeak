@@ -84,6 +84,12 @@ class TestChat:
         await client.chat(LOCAL, "", "m", MSGS)
         assert sent(http.requests[0])["reasoning_effort"] == "none"
 
+    async def test_a_server_elsewhere_on_your_network_is_told_not_to_think_either(self, http):
+        # A 27B model thinking for a minute with no bytes sent is what made grading time out over the LAN.
+        http.on("POST", "/chat/completions", reply("ok"))
+        await client.chat("http://192.168.0.13:1234/v1", "", "m", MSGS)
+        assert sent(http.requests[0])["reasoning_effort"] == "none"
+
     async def test_a_rejected_param_is_dropped_and_remembered(self, http):
         http.on("POST", "/chat/completions", bad_param("reasoning_effort"), reply("ok"))
         assert await client.chat(LOCAL, "", "m", MSGS) == "ok"
@@ -147,6 +153,11 @@ def test_offending_param():
 @pytest.mark.parametrize("url, local", [
     ("http://localhost:11434/v1", True), ("http://127.0.0.1:1234/v1", True), ("http://[::1]:8000", True),
     ("http://box.local:11434/v1", True), ("https://api.openai.com/v1", False), ("", False), (None, False),
+    # your own network: a GPU box in the next room is local too
+    ("http://192.168.0.13:1234/v1", True), ("http://10.0.0.5:8000/v1", True), ("http://172.20.1.1:8080/v1", True),
+    ("http://100.64.1.2:1234/v1", True), ("http://mac-studio:1234/v1", True), ("http://[fd00::1]:1234/v1", True),
+    # the internet is not
+    ("http://8.8.8.8:1234/v1", False), ("https://openrouter.ai/api/v1", False), ("http://172.32.0.1/v1", False),
 ])
 def test_is_local(url, local):
     assert client.is_local(url) is local

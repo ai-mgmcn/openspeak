@@ -137,7 +137,7 @@ Reasoning models such as Qwen3 normally "think" before every answer. That takes 
 
 ### When grading happens
 
-With a local model, grading waits until you finish the session by default. The partner and the grader share one GPU, and on slower models grading during the conversation makes every reply slow. Cloud services grade live.
+With a local model, grading waits until you finish the session by default. "Local" includes a server elsewhere on your own network (for example `http://192.168.0.13:1234/v1`), not just this computer. The partner and the grader share one GPU, and on slower models grading during the conversation makes every reply slow. Cloud services grade live.
 
 With a fast model such as Qwen3.8 27B, live grading hardly slows replies down. Change this under *AI service → When to grade*.
 

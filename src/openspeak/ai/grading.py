@@ -148,6 +148,16 @@ def _context_text(history):
     return "\n".join(lines) or "(start of conversation)"
 
 
+_GRADE_FIELDS = ("errors", "verdict", "corrected")
+
+
+def _as_grade(result):
+    """A JSON object with none of a grade's fields is an error message or a refusal, not "no mistakes"."""
+    if not any(k in result for k in _GRADE_FIELDS):
+        raise ValueError("The grader's reply isn't a grade")
+    return result
+
+
 async def grade(cfg, langs, text, history):
     """Grade one utterance, retrying timeouts and malformed JSON before giving up."""
     messages = [
@@ -164,7 +174,7 @@ async def grade(cfg, langs, text, history):
         for attempt in range(retries + 1):
             await g.partner_idle()
             try:
-                return normalize(client.parse_json(await call(cfg, messages)), langs)
+                return normalize(_as_grade(client.parse_json(await call(cfg, messages))), langs)
             except (httpx.TransportError, ValueError) as e:  # a timeout or dropped connection; a reply that isn't JSON
                 last = e
                 if attempt < retries:

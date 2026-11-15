@@ -78,6 +78,11 @@ class TestSettings:
         assert grading.max_concurrent(local_cfg) == 1
         assert grading.timeout_for(local_cfg) == 3 * float(local_cfg["coach"]["timeout"])
 
+    def test_a_gpu_box_on_your_network_is_treated_as_local(self, local_cfg):
+        local_cfg["llm"]["base_url"] = "http://192.168.0.13:1234/v1"
+        assert not grading.grade_live(local_cfg) and grading.max_concurrent(local_cfg) == 1
+        assert grading.timeout_for(local_cfg) == 3 * float(local_cfg["coach"]["timeout"])
+
     def test_cloud_grades_live(self, cfg):
         assert grading.grade_live(cfg)
         cfg["coach"]["when"] = "end"
@@ -109,6 +114,20 @@ class TestGrade:
         with pytest.raises(ValueError):
             await grading.grade(cfg, EN_ZH, "I want check in", [])
         assert llm.calls == ["grade", "grade"]
+
+    @pytest.mark.parametrize("reply", ['{}', '{"error": "model overloaded"}', '{"message": "I cannot help with that"}'])
+    async def test_an_object_that_is_not_a_grade_is_a_failure_not_a_clean_turn(self, cfg, llm, reply):
+        """Recorded as clean, the line would count as graded and Complete would never offer to redo it."""
+        cfg["coach"]["retries"] = 1
+        llm.script["grade"] = reply
+        with pytest.raises(ValueError, match="isn't a grade"):
+            await grading.grade(cfg, EN_ZH, "I want check in", [])
+        assert llm.calls == ["grade", "grade"]
+
+    @pytest.mark.parametrize("reply", ['{"errors": []}', '{"verdict": "clean"}', '{"corrected": "I want to check in"}'])
+    async def test_a_grade_with_any_of_the_usual_fields_is_accepted(self, cfg, llm, reply):
+        llm.script["grade"] = reply
+        assert (await grading.grade(cfg, EN_ZH, "I want check in", []))["errors"] == []
 
     @pytest.mark.parametrize("error", [httpx.ReadTimeout("slow"), httpx.ConnectError("reset"), json.JSONDecodeError("bad", "", 0)])
     async def test_a_timeout_or_dropped_connection_is_retried(self, cfg, llm, error):

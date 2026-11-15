@@ -5,6 +5,7 @@ exactly one code path to keep working.
 """
 
 import asyncio
+import ipaddress
 import json
 import re
 
@@ -52,8 +53,21 @@ _rejected = {}
 
 
 def is_local(url):
+    """
+    Whether the model server is on this computer or this network, not out on the internet:
+    a localhost, a private or Tailscale-style address (192.168.x.x, 10.x.x.x, 100.x.x.x),
+    a bare machine name or a .local one. Those are your own GPU, which is slow and shared,
+    so they get the "local" treatment: thinking off, longer timeouts, one request at a time.
+    """
     host = (urlparse(url or "").hostname or "").lower()
-    return host in ("localhost", "127.0.0.1", "0.0.0.0", "::1", config.LOCAL_HOST) or host.endswith(".local")
+    if not host:
+        return False
+    if host in ("localhost", config.LOCAL_HOST) or "." not in host or host.endswith((".local", ".lan", ".home.arpa")):
+        return True
+    try:
+        return not ipaddress.ip_address(host).is_global
+    except ValueError:
+        return False
 
 
 async def post_endpoint(http, base_url, path, **kw):
