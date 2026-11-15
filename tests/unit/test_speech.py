@@ -160,3 +160,19 @@ class TestSynthesize:
         with pytest.raises(RuntimeError, match="Speech synthesis failed: HTTP 400 bad voice"):
             await speech.synthesize(cfg, "Hello")
         assert len(http.requests) == 1 and "authorization" not in http.requests[0].headers
+
+
+def test_the_installed_speech_libraries_can_decode_audio(tmp_path):
+    """The real faster-whisper decoder, with whatever `av` was installed: a new `av` once broke it for everyone."""
+    import wave
+
+    pytest.importorskip("faster_whisper")
+    from faster_whisper.audio import decode_audio
+
+    path = tmp_path / "tone.wav"
+    with wave.open(str(path), "wb") as w:
+        w.setnchannels(1)
+        w.setsampwidth(2)
+        w.setframerate(16000)
+        w.writeframes(b"\x00\x10" * 16000)  # one second
+    assert len(decode_audio(str(path))) == 16000

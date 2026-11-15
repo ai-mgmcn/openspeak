@@ -14,7 +14,8 @@ dependencies = [
 
 [project.optional-dependencies]
 # Free, offline speech recognition. Downloads a Whisper model on first use.
-local = ["faster-whisper>=1.0"]
+# av 19 dropped open(metadata_errors=...), which faster-whisper 1.2 still passes: every transcription fails.
+local = ["faster-whisper>=1.0", "av<19"]
 
 [project.urls]
 Homepage = "https://github.com/ai-mgmcn/openspeak"

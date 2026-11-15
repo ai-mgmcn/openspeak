@@ -803,6 +803,10 @@ function startRecorder() {
   V.recAt = performance.now();
 }
 
+// The mic's ring grows with your voice, but never past the space under the dock: a transform that
+// overflows the page makes it scroll a few pixels, and a scrollbar that comes and goes shifts everything sideways.
+const RING_MAX = 0.4;
+
 function listen() {
   if (!V.stream || !S || S.ending) return;
   dropRecording();
@@ -819,7 +823,7 @@ function listen() {
     for (const x of buf) sum += x * x;
     const rms = Math.sqrt(sum / buf.length);
     const thr = Math.max(0.012, V.floor * 3);
-    $("#ring").style.transform = `scale(${1 + Math.min(rms * 9, 0.7)})`;
+    $("#ring").style.transform = `scale(${1 + Math.min(rms * 9, RING_MAX)})`;
     if (rms > thr) {
       V.voiceMs += dt;
       if (!V.heard && V.voiceMs > 180) { V.heard = true; if (V.state !== "ptt") setState("hearing"); }

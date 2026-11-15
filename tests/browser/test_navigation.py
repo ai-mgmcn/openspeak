@@ -184,3 +184,14 @@ def test_a_report_card_names_the_scene_that_was_practised(page):
     assert "Check-in: overweight bag" in card.inner_text()
     page.evaluate("""Jobs.track({id: "20260101_130000", kind: "finish", stage: "ready", complete: true, ungraded: 0, problem: "", scene: null})""")
     assert "Free conversation" in page.locator("#jobs .job b").nth(1).inner_text()
+
+
+def test_the_mic_ring_at_its_largest_does_not_make_the_page_scroll(page):
+    """It grows with your voice; if it overflowed, a scrollbar would flicker in and out as you speak."""
+    page.click(".card.feature")
+    page.wait_for_selector("#micBtn")
+    for width, height in ((1100, 760), (390, 700), (1280, 800)):
+        page.set_viewport_size({"width": width, "height": height})
+        spare = page.evaluate("() => { const se = document.scrollingElement; return se.scrollHeight - se.clientHeight }")
+        page.evaluate("() => { document.querySelector('#ring').style.transition = 'none'; document.querySelector('#ring').style.transform = `scale(${1 + RING_MAX})` }")
+        assert page.evaluate("() => { const se = document.scrollingElement; return se.scrollHeight - se.clientHeight }") == spare, (width, height)
